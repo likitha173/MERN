@@ -1,0 +1,61 @@
+git status
+
+git init
+
+git add <filename>
+
+git add .
+
+git rm --cached <file-name>      //to remove file
+
+git rm -r --cached <file-name>       //to remove folder
+
+git commit -m "message"     //click the pic
+
+git log     // keeps history of commits
+
+git log --oneline       //shows the commits history in 1 line
+
+git checkout <commit-id>        //goes back to that past commit
+
+git checkout main
+
+
+
+///GIT config comm
+
+git config --global user.email
+
+git config --global user.name
+
+///GIT ignore
+
+.gitignore      //file
+
+
+
+////BRANCHING
+
+git branch      //shows all the available branchs
+
+git branch <branch-name>        //create the branch
+
+git cheackout <branch-name>     //switchs to that branch
+
+git cheackout -b <branch-name>     //will create and switchs to that branch
+
+git cheackout main          //going to that branch(main)
+
+git branch -d <branch-name>         //delet the branch
+
+git merge <branch-name>
+
+git branch -d <branch-name>
+
+////GIT merge conflict
+
+
+
+
+
+

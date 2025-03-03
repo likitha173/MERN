@@ -1,0 +1,31 @@
+.container{
+    width: 1400px;
+    height: 800px;
+    background-color: brown;
+    border: 1px solid black;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    margin: 80px;
+    border: 1px solid red;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* transition: all 2s linear; */
+   
+}
+
+.box:hover{
+    /* transform: rotateX(45deg); */
+    /* transform: rotate(360deg); */
+    /* transform: rotate(-360deg); */
+    /* transform: scale(2); */
+    /* transform: scale(0.5); */
+    /* transform: scaleX(0.5); */
+    /* transform: skew(45deg); */
+    /* transform: translate(400px); */
+    transform: translate(400px, 200px);
+}

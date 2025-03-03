@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <!-- Navbar -->
+    <div class="bg-white shadow-md p-4 flex items-center">
+        <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 016 5.22M4 10V6a2 2 0 012-2h2m6 0h2a2 2 0 012 2v4m4 4v6a2 2 0 01-2 2h-6m-4 0H6a2 2 0 01-2-2v-6m16-4H4" />
+        </svg>
+        <h1 class="text-lg font-semibold">Overview</h1>
+        <div class="border-b-2 border-green-500 w-20 ml-2"></div>
+    </div>
+
+ <!-- Filters and Search Bar -->
+<div class="bg-white shadow-md p-4 mt-4 flex justify-between items-center rounded-md space-x-4">
+    <div class="flex flex-grow space-x-4">
+        <div class="relative flex-grow">
+            <select class="border px-4 py-2 rounded-md w-full appearance-none">
+                <option>Lifecycle</option>
+            </select>
+            <svg class="w-5 h-5 absolute top-3 right-3 text-gray-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </div>
+        <div class="relative flex-grow">
+            <select class="border px-4 py-2 rounded-md w-full appearance-none">
+                <option>Tags</option>
+            </select>
+            <svg class="w-5 h-5 absolute top-3 right-3 text-gray-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </div>
+        <div class="relative flex-grow">
+            <select class="border px-4 py-2 rounded-md w-full appearance-none">
+                <option>System</option>
+            </select>
+            <svg class="w-5 h-5 absolute top-3 right-3 text-gray-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </div>
+    </div>
+    <div class="relative flex-grow max-w-sm">
+        <input type="text" placeholder="Search" class="border px-4 py-2 w-full rounded-md">
+        <svg class="w-5 h-5 absolute top-3 right-3 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10 4a6 6 0 106 6 6 6 0 00-6-6z" />
+        </svg>
+    </div>
+</div>
+
+
+    
+
+<div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Card 1 -->
+    <div class="bg-white shadow-md rounded-md border border-gray-200 p-4 relative max-w-sm">
+        <h2 class="text-lg font-semibold">Httpd Base Image</h2>
+        <div class="mt-2 border-t-2 w-full bg-gradient-to-r from-blue-600 to-green-600 h-1"></div>
+        <p class="text-blue-600 font-semibold mt-2">14098 - MetLife Dev X</p>
+        <div class="flex items-center space-x-4 mt-2 text-gray-400">
+            <span class="flex items-center space-x-1">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10c0 1.104.896 2 2 2h14c1.104 0 2-.896 2-2V7c0-1.104-.896-2-2-2h-4.586a2 2 0 01-1.414-.586L9.586 2H5c-1.104 0-2 .896-2 2z"/>
+                </svg>
+                <span>Base Image</span>
+            </span>
+            <span class="flex items-center space-x-1">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10c0 1.104.896 2 2 2h14c1.104 0 2-.896 2-2V7c0-1.104-.896-2-2-2h-4.586a2 2 0 01-1.414-.586L9.586 2H5c-1.104 0-2 .896-2 2z"/>
+                </svg>
+                <span>14098</span>
+            </span>
+        </div>
+        <p class="text-gray-600 mt-2">MetLife Approved base image for Apache Httpd</p>
+
+        <div class="flex mt-4">
+            <button class="ml-auto text-blue-600 font-semibold flex items-center border px-3 py-1 rounded-md border-blue-500">
+                Details 
+                <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+    </div>
+    <div class="bg-white shadow-md rounded-md border border-gray-200 p-4 relative max-w-sm">
+        <h2 class="text-lg font-semibold">Httpd Base Image</h2>
+        <div class="mt-2 border-t-2 w-full bg-gradient-to-r from-blue-600 to-green-600 h-1"></div>
+        <p class="text-blue-600 font-semibold mt-2">14098 - MetLife Dev X</p>
+        <div class="flex items-center space-x-4 mt-2 text-gray-400">
+            <span class="flex items-center space-x-1">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10c0 1.104.896 2 2 2h14c1.104 0 2-.896 2-2V7c0-1.104-.896-2-2-2h-4.586a2 2 0 01-1.414-.586L9.586 2H5c-1.104 0-2 .896-2 2z"/>
+                </svg>
+                <span>Base Image</span>
+            </span>
+            <span class="flex items-center space-x-1">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10c0 1.104.896 2 2 2h14c1.104 0 2-.896 2-2V7c0-1.104-.896-2-2-2h-4.586a2 2 0 01-1.414-.586L9.586 2H5c-1.104 0-2 .896-2 2z"/>
+                </svg>
+                <span>14098</span>
+            </span>
+        </div>
+        <p class="text-gray-600 mt-2">MetLife Approved base image for Apache Httpd</p>
+
+        <div class="flex mt-4">
+            <button class="ml-auto text-blue-600 font-semibold flex items-center border px-3 py-1 rounded-md border-blue-500">
+                Details 
+                <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+    </div>
+    <div class="bg-white shadow-md rounded-md border border-gray-200 p-4 relative max-w-sm">
+        <h2 class="text-lg font-semibold">Httpd Base Image</h2>
+        <div class="mt-2 border-t-2 w-full bg-gradient-to-r from-blue-600 to-green-600 h-1"></div>
+        <p class="text-blue-600 font-semibold mt-2">14098 - MetLife Dev X</p>
+        <div class="flex items-center space-x-4 mt-2 text-gray-400">
+            <span class="flex items-center space-x-1">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10c0 1.104.896 2 2 2h14c1.104 0 2-.896 2-2V7c0-1.104-.896-2-2-2h-4.586a2 2 0 01-1.414-.586L9.586 2H5c-1.104 0-2 .896-2 2z"/>
+                </svg>
+                <span>Base Image</span>
+            </span>
+            <span class="flex items-center space-x-1">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10c0 1.104.896 2 2 2h14c1.104 0 2-.896 2-2V7c0-1.104-.896-2-2-2h-4.586a2 2 0 01-1.414-.586L9.586 2H5c-1.104 0-2 .896-2 2z"/>
+                </svg>
+                <span>14098</span>
+            </span>
+        </div>
+        <p class="text-gray-600 mt-2">MetLife Approved base image for Apache Httpd</p>
+
+        <div class="flex mt-4">
+            <button class="ml-auto text-blue-600 font-semibold flex items-center border px-3 py-1 rounded-md border-blue-500">
+                Details 
+                <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></div>
+    </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
