@@ -37,7 +37,7 @@ body {
 
 .filters {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -45,7 +45,7 @@ body {
 
 @media (min-width: 768px) {
     .filters {
-        flex-direction: row;
+        /* flex-direction: row; */
         justify-content: space-between;
         align-items: center;
     }
@@ -53,14 +53,14 @@ body {
 
 .filter-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     width: 100%;
 }
 
 @media (min-width: 768px) {
     .filter-group {
-        flex-direction: row;
+        /* flex-direction: row; */
         flex-grow: 1;
     }
 }
@@ -94,7 +94,7 @@ select {
 
 .search-wrapper {
     position: relative;
-    width: 100%;
+    width: 50%;
 }
 
 @media (min-width: 768px) {
