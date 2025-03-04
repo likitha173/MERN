@@ -280,3 +280,18 @@ input[type="text"] {
     line-height: var(--ui-elements-text-link-lh-base, 1.5rem);
     text-transform: capitalize;
 }
+
+.total-results {
+    position: absolute; 
+    top: 3rem;
+    right: 3rem; 
+    color: #018EDC;
+    font-family: "MetLife Circular", sans-serif;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    z-index: 10;
+}
