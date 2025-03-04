@@ -28,17 +28,17 @@ body {
     margin-left: 0.5rem;
 }
 
-.container{
+.container {
     background-color: white;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 0.6rem;
 }
+
 .filters {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 1rem;
-    justify-content: space-between;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -53,9 +53,7 @@ body {
 
 .filter-group {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     gap: 1rem;
     width: 100%;
 }
@@ -73,13 +71,14 @@ body {
 }
 
 select {
-    border: 1px solid #2563eb;
     padding: 0.5rem 2.5rem 0.5rem 1rem;
-    border-radius: 0.375rem;
     width: 100%;
     appearance: none;
     box-sizing: border-box;
     height: 2.5rem;
+    border-radius: var(--form-inputs-radius-base, 0.5rem);
+    border: 1px solid var(--color-azure-40, #06C);
+    background: var(--form-field-fill, #FFF);
 }
 
 .select-icon {
@@ -95,18 +94,23 @@ select {
 
 .search-wrapper {
     position: relative;
-    width: 50%;
+    width: 100%;
 }
 
-
+@media (min-width: 768px) {
+    .search-wrapper {
+        width: 50%;
+    }
+}
 
 input[type="text"] {
-    border: 1px solid #2563eb;
     padding: 0.5rem 2.5rem 0.5rem 1rem;
-    border-radius: 0.375rem;
     width: 100%;
     box-sizing: border-box;
     height: 2.5rem;
+    border-radius: var(--form-inputs-radius-base, 0.5rem);
+    border: 1px solid var(--form-field-stroke-hover-selected, #0061A0);
+    background: var(--form-field-fill, #FFF);
 }
 
 .search-icon {
@@ -122,11 +126,19 @@ input[type="text"] {
 .cards {
     margin-top: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 @media (min-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -136,30 +148,41 @@ input[type="text"] {
     background-color: white;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
-    border-radius: 0.375rem;
     padding: 1rem 2rem;
     position: relative;
-    max-width: 20rem;
+    max-width: auto;
     margin-top: 1rem;
     margin-bottom: 5rem;
+    fill: #FFF;
+    stroke-width: 0.5px;
+    stroke: var(--brand-neutrals-gray-medium, #A7A8AA);
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.15));
+    font-family: "Noto Sans";
 }
 
 .card h2 {
     margin-top: 0;
-    margin-bottom: 0.5rem; 
-    font-size: 1.25rem;
-    font-weight: 600; 
+    margin-bottom: 0.5rem;
+    color: var(--Brand-Neutrals-Gray-Darkest, var(--Brand-Neutrals-Gray-Darkest, #333));
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.25rem;
 }
 
 .card-underline {
-    background: linear-gradient(to right, #2563eb, #10b981);
+    background: var(--Brand-Gradients-B-G-Horizontal, linear-gradient(87deg, #0090DA 20.83%, #A3CD4D 75.53%));
     height: 0.15rem;
 }
 
 .card-subtitle {
-    color: #2563eb;
     font-weight: 500;
     margin-top: 0.75rem;
+    color: #007ABC;
+    font-family: "Noto Sans";
+    font-size: 0.8125rem;
+    font-style: normal;
+    line-height: 2.25rem;
 }
 
 .card-info {
@@ -167,7 +190,12 @@ input[type="text"] {
     align-items: center;
     gap: 1rem;
     margin-top: 0.5rem;
-    color: #9ca3af;
+    color: #787486;
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .info-item {
@@ -182,27 +210,35 @@ input[type="text"] {
 }
 
 .card-description {
-    color: #4b5563;
     margin-top: 0.5rem;
+    color: var(--Brand-Neutrals-Gray-Darkest, var(--Brand-Neutrals-Gray-Darkest, #333));
+    font-family: "Noto Sans";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.25rem;
 }
 
 .card-button {
     margin-left: auto;
-    color: #2563eb;
-    font-weight: 400;
+    color: #018EDC;
+    font-weight: 600;
     display: flex;
+    justify-content: center;
     align-items: center;
-    border: 1px solid #2563eb;
-    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--button-button-primary-fill, #007ABC);
+    padding: 0.3rem 0.5rem;
     border-radius: 0.2rem;
     margin-top: 1rem;
     background-color: transparent;
     cursor: pointer;
+    gap: 0.2rem;
+    border-radius: 0.18694rem;
 }
 
 .button-icon {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 0.5rem;
+    height: 0.5rem;
     margin-left: 0.25rem;
 }
 
@@ -212,36 +248,34 @@ input[type="text"] {
     left: 0;
     width: 100%;
     height: 0.25rem;
-    background:  #2563eb;
-}
-
-.container {
-    background-color: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    margin-top: .6rem;
-   /* Add padding to prevent overlap with the absolutely positioned header */
+    background: var(--brand-primary-ml-blue1-base, #0090DA);
 }
 
 .overview-header {
-    position: absolute; /* Position the header absolutely */
-    top: 1rem; /* Adjust top position to align with the container's padding */
-    left: 2rem; /* Adjust left position to align with the container's padding */
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border-bottom: 3.5px solid #10b981;
+    border-bottom: 3.5px solid #528320;
 }
 
 .nav-icon {
     width: 1.5rem;
     height: 1.5rem;
-    color: #4b5563; /* Adjust color as needed */
+    color: #4b5563;
 }
 
 .overview-text {
-    font-size: 1.25rem;
     font-weight: 600;
-    color: #1f2937; /* Adjust color as needed */
+    color: #1f2937;
     margin: 0;
+    color: var(--Brand-Neutrals-Gray-Darkest, var(--brand-neutrals-gray-darkest, #333));
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: var(--ui-elements-base, 1rem);
+    font-style: normal;
+    line-height: var(--ui-elements-text-link-lh-base, 1.5rem);
+    text-transform: capitalize;
 }

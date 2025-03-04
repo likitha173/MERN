@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Base Image - Overview</title>
+    <link rel="stylesheet" href="overview-details.css">
+</head>
+<body>
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'overview')">Overview</button>
+        <button class="tab-button" onclick="openTab(event, 'vulnerability')">Vulnerability</button>
+        <button class="tab-button" onclick="openTab(event, 'vulnerability')">Dockerfile</button>
+    </div>
+
+    <div class="container">
+        <h2>2.4-alpine</h2>
+
+        <div class="info-box">
+            <p><strong>Snow Group:</strong> GTO-GEPDEVX-L3-US</p>
+            <p><strong>Maintainer:</strong> Abc@Metlife.Com</p>
+            <p><strong>OS Name:</strong> Alpine</p>
+            <p><strong>OS Version:</strong> 3.16</p>
+        </div>
+
+        
+
+        <div id="overview" class="tab-content active">
+            <h3>Docker Base Image for library/httpd</h3>
+            <p>Approved base image by Metlife for <strong>library/httpd</strong>. It is based on the official library/httpd image from <a href="#">registry-1.docker.io/library/httpd</a>.</p>
+            <h3>Dockerfile Governance</h3>
+            <p>Please ensure all required labels are available with accurate information in all Dockerfile(s). This includes but is not limited to:</p>
+            <ul>
+                <li>EAI: EAI Code of Base Image owner</li>
+                <li>Maintainer: The name, contact, SNOW Group information of the maintainer team.</li>
+                <li>Product: The Name and Version of the Product available in this base image.</li>
+                <li>Base OS: The Operating System Name and version included in each base image.</li>
+            </ul>
+        </div>
+
+        <div id="vulnerability" class="tab-content">
+            <h3>How to use this image</h3>
+            <p>You can pull this image from JFrog Artifactory</p>
+            <pre>
+FROM jfrog-artifactory.metlife.com/docker-metlife-base-images-virtual/library/httpd:2.4-alpine
+
+LABEL com.metlife.image.app.description="" \
+      com.metlife.image.app.dockerfile="" \
+      com.metlife.image.app.source="" \
+      com.metlife.image.app.maintainer="" \
+      com.metlife.image.app.product.name="" \
+      com.metlife.image.app.eaiCode="" \
+      com.metlife.image.app.group="" \
+      com.metlife.image.app.product.version=""
+
+USER www-data
+COPY dist/ /app
+COPY httpd-app.conf /usr/local/apache2/conf/
+
+# Add your custom configuration here
+            </pre>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            let i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
