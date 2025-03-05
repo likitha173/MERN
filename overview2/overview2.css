@@ -9,7 +9,7 @@ body {
     background-color: white;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 0.6rem;
 }
 
 /* Header Styles */
@@ -38,10 +38,14 @@ body {
 
 /* Main Card Styles */
 .main-card {
-    background-color: white;
-    padding: 1.5rem;
-    border: 1px solid #097cb1;
-    margin-bottom: 1.5rem;
+    padding: 0.3rem 1rem;
+    margin: 1rem 1.5rem;
+    border: 0.5px solid var(--Gradient-6---light-blue-to-green, #A4CE4E);
+    background: #FFF;
+    gap: 1.25;
+
+    /* All edges Drop Shadow */
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
 }
 
 .card-content {
@@ -52,42 +56,57 @@ body {
 }
 
 .card-icon {
-    font-size: 2.25rem;
-    width: 6rem;
-    height: 6rem;
+    /* font-size: 2.25rem; */
+    /* width: 6rem;
+    height: 6rem; */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    /* border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .card-details {
-    flex-grow: 1;
+    width: 100%;
+    color: #333;
+    font-family: "Noto Sans";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem;
+    /* 166.667% */
+    text-transform: capitalize;
+
 }
 
-.card-details p {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem 0;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    /* Adjust the ratio as needed */
+    gap: 0.01rem;
+    /* Space between rows and columns */
+    align-items: center;
+    /* Vertically align items */
 }
 
-.card-details span {
-    width: 20%;
+.label {
+    text-align: left;
+    padding-right: 0.3rem;
+
+}
+
+.value {
     text-align: left;
 }
 
-.card-details strong {
-    width: 100%;
-}
-
-.card-details a {
-    color: #2563eb;
+.value a {
+    color: #333;
     text-decoration: none;
+    font-weight: 600;
 }
 
-.card-details a:hover {
+.value a:hover {
     text-decoration: underline;
 }
 
@@ -96,24 +115,25 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    margin: 1.6rem 1.5rem;
 }
 
 .sub-card {
-    background-color: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 1.5rem;
     border: 1px solid;
+    fill: #FFF;
+    stroke-width: 1px;
+    stroke: #D42123;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.15));
 }
 
 .sub-card h2 {
     font-size: 1.125rem;
     font-weight: 600;
     margin-top: 0rem;
+    color: #333;
 }
 
-.sub-card p {
-    margin: 0.5rem 0;
-}
 
 .sub-card a {
     color: #2563eb;
@@ -136,6 +156,50 @@ body {
     border-color: #34d399;
 }
 
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
+    gap: 1rem;
+    color: #333;
+    font-family: "Noto Sans";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.6875rem;
+    text-transform: capitalize;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-top: 1rem;
+    
+}
+
+
+.card-left,
+.card-right {
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.card-left {
+    text-align: left; /* Align text to the right */
+    padding-right: 1rem; /* Add spacing between label and divider */
+}
+.card-right {
+    color: #333;
+    font-weight: 400;
+    text-align: left;
+}
+
+.vertical-divider {
+    width: 0.0625rem;
+    background: var(--brand-neutrals-gray-light, #D9D9D6);
+    height: 100%;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .sub-cards-container {
@@ -144,30 +208,14 @@ body {
 }
 
 .card-underline {
-    background: linear-gradient(to right, #2563eb, #10b981);
+    background: var(--Brand-Gradients-B-G-Horizontal, linear-gradient(87deg, #0090DA 20.83%, #A3CD4D 75.53%));
     height: 0.15rem;
 }
 
-.card-grid {
-    display: grid;
-    grid-template-columns: 1fr 2px 1fr;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    margin-top: 1rem;
-}
-
-.card-left p,
-.card-right p {
-    margin: 0.5rem 0;
-}
-
-.vertical-divider {
-    width: 2px;
-    background-color: #ccc;
-    height: 100%;
+.icons {
+    display: flex;
+    align-items: center; /* Centers icons vertically */
+    gap: 0.5rem; /* Adds spacing between icons */
 }
 
 .icons span {
@@ -181,13 +229,88 @@ body {
     color: white;
     border-radius: 50%;
     margin-right: 5px;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer; /* Makes it clear that icons are interactive */
 }
 
-.red-circle { background-color: #e63946; }
-.yellow-circle { background-color: #f4a261; }
-.blue-circle { background-color: #457b9d; }
-.green-circle { background-color: #2a9d8f; }
+.icons span:hover {
+    transform: scale(1.2); /* Slightly increase the size on hover */
+}
 
+.icons span:active {
+    transform: scale(1.1); /* Reduce the size slightly on click */
+}
+
+
+.red-circle {
+    background-color: #e63946;
+}
+
+.yellow-circle {
+    background-color: #f4a261;
+}
+
+.blue-circle {
+    background-color: #457b9d;
+}
+
+.green-circle {
+    background-color: #2a9d8f;
+}
+
+
+.vulnerability-icons {
+    gap: 0.25rem; /* Reduced gap between icons */
+}
+
+.vulnerability-icons span {
+    width: 16px; /* Smaller icons */
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+/* Scale End of Life icons on hover/click and show tick mark */
+.eol-icons span {
+    width: 20px;
+    height: 20px;
+    /* line-height: 16px; */
+    font-size: 12px;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.eol-icons span::before {
+    content: "";
+    display: none;
+    font-size: 10px;
+}
+
+.eol-icons span:hover,
+.eol-icons span:active {
+    transform: scale(1.2); /* Scale on hover/click */
+}
+
+.eol-icons span:hover::before,
+.eol-icons span:active::before {
+    display: inline-block; /* Show tick mark on hover/click */
+}
+
+/* Ensure only the tick mark appears on hover/click */
+.eol-icons span.red-circle:hover::before,
+.eol-icons span.red-circle:active::before {
+    content: "✔";
+}
+
+.eol-icons span.yellow-circle:hover::before,
+.eol-icons span.yellow-circle:active::before {
+    content: "✔";
+}
+
+.eol-icons span.green-circle:hover::before,
+.eol-icons span.green-circle:active::before {
+    content: "✔";
+}
 .read-more {
     color: #2563eb;
     text-decoration: none;
